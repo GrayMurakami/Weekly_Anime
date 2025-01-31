@@ -1190,7 +1190,9 @@
         header.classList.remove('hidden');
 
         setTimeout(() => {
+          if (isAnchorClicked) {
           isAnchorClicked = false;
+          }
         }, 2000);
       });
     });
