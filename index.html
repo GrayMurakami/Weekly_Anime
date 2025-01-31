@@ -1181,17 +1181,34 @@
     });
 
     let lastScrollPosition = 0;
+    let isAnchorClicked = false;
     const header = document.querySelector('header');
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function () {
+        isAnchorClicked = true;
+        header.classList.remove('hidden');
 
+        setTimeout(() => {
+          isAnchorClicked = false;
+        }, 2000);
+      });
+    });
+  
     window.addEventListener('scroll', () => {
       const currentScrollPosition = window.scrollY;
 
-      if (currentScrollPosition > lastScrollPosition) {
+      if(isAnchorClicked) {
+        // Если кликаем по якорю - оставить хедер
+        header.classList.remove('hidden');
+      else {
+        if (currentScrollPosition > lastScrollPosition) {
           // Скролл вниз — скрыть хедер
           header.classList.add('hidden');
-      } else {
+        } else {
           // Скролл вверх — показать хедер
           header.classList.remove('hidden');
+        }
       }
 
       lastScrollPosition = currentScrollPosition;
