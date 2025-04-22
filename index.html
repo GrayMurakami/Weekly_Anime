@@ -1188,11 +1188,13 @@
       anchor.addEventListener('click', function () {
         isAnchorClicked = true;
         header.classList.remove('hidden');
-        // setTimeout(() => {
-        //   if (isAnchorClicked) {
-        //   isAnchorClicked = false;
-        //   }
-        // }, 2000);
+
+        setTimeout(() => {
+          if (isAnchorClicked) {
+          header.classList.add('hidden'); // скрываем хедер
+          isAnchorClicked = false;
+          }
+        }, 2000); // через 2 секунды
       });
     });
   
