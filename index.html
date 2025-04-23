@@ -1183,7 +1183,7 @@
     let lastScrollPosition = 0;
     let isAnchorClicked = false;
     const header = document.querySelector('header');
-    
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function () {
         isAnchorClicked = true;
@@ -1191,13 +1191,14 @@
 
         setTimeout(() => {
           if (isAnchorClicked) {
-          header.classList.add('hidden'); // скрываем хедер
-          isAnchorClicked = false;
+            header.classList.add('hidden'); // скрываем хедер
+            isAnchorClicked = false;
           }
-        }, 2000); // через 2 секунды
+        }, 2000);
+
       });
     });
-  
+
     window.addEventListener('scroll', () => {
       const currentScrollPosition = window.scrollY;
 
@@ -1223,9 +1224,19 @@
     function scrollToElement(index) {
       const target = document.getElementById(goal[index]);
       if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
+    //
+    function menuScrollTo() {
+      const objectName = document.getElementById(anime);
+      if (objectName) {
+        objectName.menuScrollTo({ behavior: 'smooth'}
+        )
+      }
+    } 
+    //
 
 
     const container = document.querySelector('.photo-move');
