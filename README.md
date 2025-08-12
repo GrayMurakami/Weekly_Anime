@@ -1,7 +1,7 @@
 # Weekly Anime
 
 **Weekly Anime** is a simple project that displays anime releases for the current week.  
-Built with **HTML5**, **CSS3**, and **JavaScript**.
+Built with **HTML5**, **CSS3**, and **JavaScript** like a landing page standart.
 
 ## Preview
 
